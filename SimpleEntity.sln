@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{36ED398C-DE89-4F22-B9CD-08CCD5980681}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{36ED398C-DE89-4F22-B9CD-08CCD5980681}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{4F7B56EB-330D-4506-9AB7-F48912244A60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{4F7B56EB-330D-4506-9AB7-F48912244A60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A42276E-1AC6-4144-8AC1-EA94E8EBD278}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{343DCA97-1704-458C-91F3-BBFC873B74A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{AC570871-C4E6-4D78-AACA-5D81FEC30FEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,18 @@ Global
 		{4F7B56EB-330D-4506-9AB7-F48912244A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F7B56EB-330D-4506-9AB7-F48912244A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F7B56EB-330D-4506-9AB7-F48912244A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36ED398C-DE89-4F22-B9CD-08CCD5980681} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
+		{4F7B56EB-330D-4506-9AB7-F48912244A60} = {2A42276E-1AC6-4144-8AC1-EA94E8EBD278}
+		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65CC9F54-5456-40A0-9F6E-3C935C9AEE3C}

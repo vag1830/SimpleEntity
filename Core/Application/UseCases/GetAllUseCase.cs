@@ -1,21 +1,24 @@
-﻿using System.Collections.Generic;
-using Core.Domain.Entities;
-using Core.Infrastructure.Repositories;
+﻿using Core.Application.Boundaries.UseCases.GetAll;
+using Core.Application.Persistence;
 
 namespace Core.Application.UseCases
 {
     public class GetAllUseCase
     {
-        private FakeEntitiesRepository _repository;
+        private ISimpleEntityRepository _repository;
+        private IGetAllOutputHandler _outputHandler;
 
-        public GetAllUseCase(FakeEntitiesRepository repository)
+        public GetAllUseCase(IGetAllOutputHandler outputHandler, ISimpleEntityRepository repository)
         {
+            _outputHandler = outputHandler;
             _repository = repository;
         }
 
-        public IList<SimpleEntity> Execute()
+        public void Execute()
         {
-            return _repository.GetAll();
+            var output = _repository.GetAll();
+
+            _outputHandler.Handle(output);
         }
     }
 }

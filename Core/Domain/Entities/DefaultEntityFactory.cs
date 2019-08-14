@@ -2,7 +2,7 @@
 
 namespace Core.Domain.Entities
 {
-    public class DefaultEntitiesFactory : IEntitiesFactory
+    public class DefaultEntityFactory : IEntityFactory
     {
         public IEntity CreateSimpleEntity(Guid id, string title)
         {

@@ -4,7 +4,7 @@ using Core.Domain.Entities;
 
 namespace Core.Infrastructure.Repositories
 {
-    public class FakeEntitiesRepository : ISimpleEntityRepository
+    public class FakeSimpleEntityEmptyListRepository : ISimpleEntityRepository
     {
         public IList<SimpleEntity> GetAll()
         {

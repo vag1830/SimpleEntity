@@ -2,7 +2,7 @@
 
 namespace Core.Domain.Entities
 {
-    public interface IEntitiesFactory
+    public interface IEntityFactory
     {
         IEntity CreateSimpleEntity(Guid id, string title);
     }
