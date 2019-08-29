@@ -1,4 +1,6 @@
-﻿using Core.Application.Boundaries.UseCases.GetAll;
+﻿using System;
+using Core.Application.Boundaries.UseCases.GetAll;
+using Core.Application.Boundaries.UseCases.GetById;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.UseCases.GetAll;
 using WebApi.UseCases.GetById;
@@ -9,13 +11,21 @@ namespace WebApi.Controllers
     [ApiController]
     public class SimpleEntitiesController : ControllerBase
     {
-        private readonly GetAllOutputHandler _presenter; 
+        private readonly GetAllOutputHandler _presenter;
+        private readonly GetByIdOutputHandler _getByIdPresenter;
         private readonly IGetAllUseCase _useCase;
+        private readonly IGetByIdUseCase _getByIdUseCase;
 
-        public SimpleEntitiesController(IGetAllUseCase useCase, GetAllOutputHandler presenter)
+        public SimpleEntitiesController(
+            IGetAllUseCase useCase, 
+            IGetByIdUseCase getByIdUseCase,
+            GetAllOutputHandler presenter,
+            GetByIdOutputHandler getByIdPresenter)
         {
             _useCase = useCase;
+            _getByIdUseCase = getByIdUseCase;
             _presenter = presenter;
+            _getByIdPresenter = getByIdPresenter;
         }
 
         [HttpGet("")]
@@ -27,9 +37,11 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public IActionResult Get(Guid id)
         {
-            return "value";
+            _getByIdUseCase.Execute(id);
+
+            return _getByIdPresenter.ViewModel;
         }
     }
 }
