@@ -3,6 +3,7 @@ using System.Linq;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.UseCases.GetById;
 
 namespace WebApi.UseCases.GetAll
 {
@@ -23,7 +24,7 @@ namespace WebApi.UseCases.GetAll
             ViewModel = new ObjectResult(result);
         }
 
-        public void Error()
+        public void Error(string message)
         {
             throw new System.NotImplementedException();
         }

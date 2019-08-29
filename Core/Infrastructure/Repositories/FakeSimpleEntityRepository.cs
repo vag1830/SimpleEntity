@@ -14,9 +14,18 @@ namespace Core.Infrastructure.Repositories
             new SimpleEntity(Guid.NewGuid(), "Three"),
         };
 
+        public SimpleEntity Item;
+
         public IList<SimpleEntity> GetAll()
         {
             return Data;
+        }
+
+        public SimpleEntity GetById(Guid id)
+        {
+            Item = new SimpleEntity(id, "One");
+
+            return Item;
         }
     }
 }

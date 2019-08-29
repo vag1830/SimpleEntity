@@ -1,6 +1,7 @@
 ﻿using Core.Application.Boundaries.UseCases.GetAll;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.UseCases.GetAll;
+using WebApi.UseCases.GetById;
 
 namespace WebApi.Controllers
 {

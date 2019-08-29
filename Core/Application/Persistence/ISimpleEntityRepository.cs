@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Core.Domain.Entities;
 
 namespace Core.Application.Persistence
@@ -6,5 +7,7 @@ namespace Core.Application.Persistence
     public interface ISimpleEntityRepository
     {
         IList<SimpleEntity> GetAll();
+
+        SimpleEntity GetById(Guid id);
     }
 }

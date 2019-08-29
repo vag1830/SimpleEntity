@@ -7,6 +7,6 @@ namespace Core.Application.Boundaries.UseCases.GetAll
     {
         void Handle(IList<SimpleEntity> output);
 
-        void Error();
+        void Error(string message);
     }
 }

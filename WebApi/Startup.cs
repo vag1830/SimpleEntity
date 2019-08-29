@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.UseCases.GetAll;
+using WebApi.UseCases.GetById;
 
 namespace WebApi
 {

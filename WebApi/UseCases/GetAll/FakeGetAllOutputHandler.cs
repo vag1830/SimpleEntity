@@ -2,6 +2,7 @@
 using System.Linq;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Domain.Entities;
+using WebApi.UseCases.GetById;
 
 namespace WebApi.UseCases.GetAll
 {
@@ -20,7 +21,7 @@ namespace WebApi.UseCases.GetAll
                 .ToList();
         }
 
-        public void Error()
+        public void Error(string message)
         {
             throw new System.NotImplementedException();
         }
