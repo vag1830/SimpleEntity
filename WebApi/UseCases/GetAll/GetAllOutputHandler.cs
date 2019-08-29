@@ -12,11 +12,13 @@ namespace WebApi.UseCases.GetAll
 
         public void Handle(IList<SimpleEntity> output)
         {
-            var result = output.Select(item => new SimpleEntityDto
-            {
-                Id = item.Id,
-                Title = item.Title
-            });
+            var result = output
+                .Select(item => new SimpleEntityDto
+                {
+                    Id = item.Id,
+                    Title = item.Title
+                })
+                .ToList();
 
             ViewModel = new ObjectResult(result);
         }

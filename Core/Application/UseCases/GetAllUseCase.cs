@@ -3,7 +3,7 @@ using Core.Application.Persistence;
 
 namespace Core.Application.UseCases
 {
-    public class GetAllUseCase
+    public class GetAllUseCase : IGetAllUseCase
     {
         private ISimpleEntityRepository _repository;
         private IGetAllOutputHandler _outputHandler;

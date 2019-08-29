@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using Core.Domain.Entities;
-
-namespace Core.Application.Boundaries.UseCases.GetAllUseCase
+﻿namespace Core.Application.Boundaries.UseCases.GetAll
 {
-    interface IGetAllUseCase
+    public interface IGetAllUseCase
     {
-        IList<SimpleEntity> Execure();
+        void Execute();
     }
 }

@@ -1,8 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Core.Application.Boundaries.UseCases.GetAll;
+using Core.Application.Persistence;
+using Core.Application.UseCases;
+using Core.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApi.UseCases.GetAll;
 
 namespace WebApi
 {
@@ -19,6 +24,11 @@ namespace WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
+
+            services.AddScoped<GetAllOutputHandler, GetAllOutputHandler>();
+            services.AddScoped<IGetAllOutputHandler, GetAllOutputHandler>(x => x.GetRequiredService<GetAllOutputHandler>());
+            services.AddScoped<IGetAllUseCase, GetAllUseCase>();
+            services.AddScoped<ISimpleEntityRepository, FakeSimpleEntityRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
