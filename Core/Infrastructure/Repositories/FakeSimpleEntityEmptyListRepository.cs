@@ -6,9 +6,11 @@ namespace Core.Infrastructure.Repositories
 {
     public class FakeSimpleEntityEmptyListRepository : ISimpleEntityRepository
     {
+        public IList<SimpleEntity> Data = new List<SimpleEntity>();
+
         public IList<SimpleEntity> GetAll()
         {
-            return new List<SimpleEntity>();
+            return Data;
         }
     }
 }

@@ -1,7 +1,6 @@
 using Core.Application.UseCases;
 using Core.Infrastructure.Repositories;
 using FluentAssertions;
-using Microsoft.AspNetCore.Mvc;
 using WebApi.UseCases.GetAll;
 using Xunit;
 
@@ -14,31 +13,34 @@ namespace UnitTests
         {
             // Arrange
             var repository = new FakeSimpleEntityEmptyListRepository();
+            var presenter = new FakeGetAllOutputHandler();
 
-            var outputHandler = new GetAllOutputHandler();
-
-            var sut = new GetAllUseCase(outputHandler, repository);
+            var sut = new GetAllUseCase(presenter, repository);
 
             // Act
             sut.Execute();
 
             // Assert
-            outputHandler.ViewModel
-                .As<ObjectResult<I>>       
-            }
+            presenter.ViewModel
+                .Should()
+                .BeEquivalentTo(repository.Data);
+        }
 
         [Fact]
         public void GetAllUseCase_ItemsExist_ShouldReturnTheListOfItems()
         {
             // Arrange
             var repository = new FakeSimpleEntityRepository();
-            var sut = new GetAllUseCase(repository);
+            var presenter = new FakeGetAllOutputHandler();
+
+            var sut = new GetAllUseCase(presenter, repository);
 
             // Act
-            var output = sut.Execute();
+            
+            sut.Execute();
 
             // Assert
-            output
+            presenter.ViewModel
                 .Should()
                 .BeEquivalentTo(repository.Data);
         }
