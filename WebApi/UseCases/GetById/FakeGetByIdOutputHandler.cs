@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Domain.Entities;
@@ -12,18 +13,22 @@ namespace WebApi.UseCases.GetAll
         public SimpleEntityDto ViewModel { get; private set; }
         public string ErrorMessage { get; private set; }
 
-        public void Handle(SimpleEntity output)
+        public Task Handle(SimpleEntity output)
         {
             ViewModel =  new SimpleEntityDto
                 {
                     Id = output.Id,
                     Title = output.Title
                 };
+
+            return Task.CompletedTask;
         }
 
-        public void Error(string message)
+        public Task Error(string message)
         {
             ErrorMessage = message;
+
+            return Task.CompletedTask;
         }
     }
 }

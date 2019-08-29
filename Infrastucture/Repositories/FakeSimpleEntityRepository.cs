@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Core.Application.Persistence;
 using Core.Domain.Entities;
 
@@ -16,16 +17,16 @@ namespace Infrastucture.Repositories
 
         public SimpleEntity Item;
 
-        public IList<SimpleEntity> GetAll()
+        public Task<IList<SimpleEntity>> GetAll()
         {
-            return Data;
+            return Task.FromResult(Data);
         }
 
-        public SimpleEntity GetById(Guid id)
+        public Task<SimpleEntity> GetById(Guid id)
         {
             Item = new SimpleEntity(id, "One");
 
-            return Item;
+            return Task.FromResult(Item);
         }
     }
 }

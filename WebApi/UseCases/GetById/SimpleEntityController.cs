@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Application.Boundaries.UseCases.GetById;
 using Microsoft.AspNetCore.Mvc;
@@ -22,9 +23,9 @@ namespace WebApi.UseCases.GetById
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(Guid id)
+        public async Task<IActionResult> Get(Guid id)
         {
-            _useCase.Execute(id);
+            await _useCase.Execute(id);
 
             return _presenter.ViewModel;
         }

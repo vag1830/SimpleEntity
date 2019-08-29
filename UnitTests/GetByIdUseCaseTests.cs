@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Core.Application.UseCases;
 using FluentAssertions;
 using Infrastucture.Repositories;
@@ -10,7 +11,7 @@ namespace UnitTests
     public class GetByIdUseCaseTests
     {
         [Fact]
-        public void GetByIdUseCase_ItemDoesNotExist_ShouldReturnErrorMessage()
+        public async Task GetByIdUseCase_ItemDoesNotExist_ShouldReturnErrorMessage()
         {
             // Arrange
             var repository = new FakeSimpleEntityEmptyListRepository();
@@ -19,7 +20,7 @@ namespace UnitTests
             var sut = new GetByIdUseCase(presenter, repository);
 
             // Act
-            sut.Execute(Guid.NewGuid());
+            await sut.Execute(Guid.NewGuid());
 
             // Assert
             presenter.ErrorMessage
@@ -32,7 +33,7 @@ namespace UnitTests
         }
 
         [Fact]
-        public void GetByIdUseCase_ItemExists_ShouldReturnTheItem()
+        public async Task GetByIdUseCase_ItemExists_ShouldReturnTheItem()
         {
             // Arrange
             var repository = new FakeSimpleEntityRepository();
@@ -41,7 +42,7 @@ namespace UnitTests
             var sut = new GetByIdUseCase(presenter, repository);
 
             // Act
-            sut.Execute(Guid.NewGuid());
+            await sut.Execute(Guid.NewGuid());
 
             // Assert
             presenter.ViewModel

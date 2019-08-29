@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Core.Application.UseCases;
 using FluentAssertions;
 using Infrastucture.Repositories;
@@ -9,7 +10,7 @@ namespace UnitTests
     public class GetAllUseCaseTests
     {
         [Fact]
-        public void GetAllUseCase_NoItemsExist_ShouldReturnEmptyList()
+        public async Task GetAllUseCase_NoItemsExist_ShouldReturnEmptyList()
         {
             // Arrange
             var repository = new FakeSimpleEntityEmptyListRepository();
@@ -18,7 +19,7 @@ namespace UnitTests
             var sut = new GetAllUseCase(presenter, repository);
 
             // Act
-            sut.Execute();
+            await sut.Execute();
 
             // Assert
             presenter.ViewModel
@@ -27,7 +28,7 @@ namespace UnitTests
         }
 
         [Fact]
-        public void GetAllUseCase_ItemsExist_ShouldReturnTheListOfItems()
+        public async Task GetAllUseCase_ItemsExist_ShouldReturnTheListOfItems()
         {
             // Arrange
             var repository = new FakeSimpleEntityRepository();
@@ -37,7 +38,7 @@ namespace UnitTests
 
             // Act
             
-            sut.Execute();
+            await sut.Execute();
 
             // Assert
             presenter.ViewModel

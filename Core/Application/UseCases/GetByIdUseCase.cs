@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Application.Persistence;
 
@@ -15,17 +16,17 @@ namespace Core.Application.UseCases
             _repository = repository;
         }
 
-        public void Execute(Guid id)
+        public async Task Execute(Guid id)
         {
-            var output = _repository.GetById(id);
+            var output = await _repository.GetById(id);
 
             if (output == null)
             {
-                _outputHandler.Error($"There is no item with id: {id.ToString()}");
+                await _outputHandler.Error($"There is no item with id: {id.ToString()}");
             }
             else 
             {
-                _outputHandler.Handle(output);
+                await _outputHandler.Handle(output);
             }
         }
     }

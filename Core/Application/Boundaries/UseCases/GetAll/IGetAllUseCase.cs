@@ -1,7 +1,9 @@
-﻿namespace Core.Application.Boundaries.UseCases.GetAll
+﻿using System.Threading.Tasks;
+
+namespace Core.Application.Boundaries.UseCases.GetAll
 {
     public interface IGetAllUseCase
     {
-        void Execute();
+        Task Execute();
     }
 }

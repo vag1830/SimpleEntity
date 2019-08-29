@@ -1,4 +1,5 @@
-﻿using Core.Application.Boundaries.UseCases.GetAll;
+﻿using System.Threading.Tasks;
+using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Application.Persistence;
 
 namespace Core.Application.UseCases
@@ -14,11 +15,11 @@ namespace Core.Application.UseCases
             _repository = repository;
         }
 
-        public void Execute()
+        public async Task Execute()
         {
-            var output = _repository.GetAll();
+            var output = await _repository.GetAll();
 
-            _outputHandler.Handle(output);
+            await _outputHandler.Handle(output);
         }
     }
 }

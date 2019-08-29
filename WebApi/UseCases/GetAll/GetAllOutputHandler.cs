@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,7 @@ namespace WebApi.UseCases.GetAll
     {
         public IActionResult ViewModel { get; private set; }
 
-        public void Handle(IList<SimpleEntity> output)
+        public Task Handle(IList<SimpleEntity> output)
         {
             var result = output
                 .Select(item => new SimpleEntityDto
@@ -22,9 +23,11 @@ namespace WebApi.UseCases.GetAll
                 .ToList();
 
             ViewModel = new ObjectResult(result);
+
+            return Task.CompletedTask;
         }
 
-        public void Error(string message)
+        public Task Error(string message)
         {
             throw new System.NotImplementedException();
         }
