@@ -1,7 +1,7 @@
 ﻿using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Application.Persistence;
 using Core.Application.UseCases;
-using Core.Infrastructure.Repositories;
+using Infrastucture.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

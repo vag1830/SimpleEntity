@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Core.Application.Persistence;
 using Core.Domain.Entities;
 
-namespace Core.Infrastructure.Repositories
+namespace Infrastucture.Repositories
 {
     public class FakeSimpleEntityRepository : ISimpleEntityRepository
     {

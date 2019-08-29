@@ -1,6 +1,6 @@
 using Core.Application.UseCases;
-using Core.Infrastructure.Repositories;
 using FluentAssertions;
+using Infrastucture.Repositories;
 using WebApi.UseCases.GetAll;
 using Xunit;
 
