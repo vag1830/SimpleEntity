@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastucture.InMemoryPersistence
+namespace Infrastucture
 {
     public class SimpleEntityContext : DbContext
     {
         public DbSet<SimpleEntity> SimpleEntities { get; set; }
 
         public SimpleEntityContext(DbContextOptions<SimpleEntityContext> options)
-            : base(options) 
+            : base(options)
         {
 
         }

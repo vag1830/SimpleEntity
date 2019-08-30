@@ -5,13 +5,13 @@ using Core.Application.Persistence;
 using Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastucture.InMemoryPersistence
+namespace Infrastucture
 {
-    public class InMemorySimpleEntityRepository : ISimpleEntityRepository
+    public class SqlLiteSimpleEntityRepository : ISimpleEntityRepository
     {
         private readonly SimpleEntityContext _context;
 
-        public InMemorySimpleEntityRepository(SimpleEntityContext context)
+        public SqlLiteSimpleEntityRepository(SimpleEntityContext context)
         {
             _context = context;
             _context.Database.EnsureCreated();

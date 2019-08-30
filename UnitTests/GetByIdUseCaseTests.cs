@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Core.Application.UseCases;
 using FluentAssertions;
-using Infrastucture.Repositories;
+using Infrastucture;
 using WebApi.UseCases.GetAll;
 using Xunit;
 

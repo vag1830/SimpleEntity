@@ -2,8 +2,6 @@
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Application.Persistence;
 using Core.Application.UseCases;
-using Infrastucture.InMemoryPersistence;
-using Infrastucture.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
