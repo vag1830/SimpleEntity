@@ -2,12 +2,15 @@
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Application.Persistence;
 using Core.Application.UseCases;
+using Infrastucture.InMemoryPersistence;
 using Infrastucture.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApi.Extensions;
 using WebApi.UseCases.GetAll;
 using WebApi.UseCases.GetById;
 
@@ -27,15 +30,8 @@ namespace WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
 
-            services.AddScoped<GetAllOutputHandler, GetAllOutputHandler>();
-            services.AddScoped<IGetAllOutputHandler, GetAllOutputHandler>(provider => provider.GetRequiredService<GetAllOutputHandler>());
-            services.AddScoped<IGetAllUseCase, GetAllUseCase>();
-
-            services.AddScoped<GetByIdOutputHandler, GetByIdOutputHandler>();
-            services.AddScoped<IGetByIdOutputHandler, GetByIdOutputHandler>(provider => provider.GetRequiredService<GetByIdOutputHandler>());
-            services.AddScoped<IGetByIdUseCase, GetByIdUseCase>();
-
-            services.AddScoped<ISimpleEntityRepository, FakeSimpleEntityRepository>();
+            services.AddInMemoryPersistence(Configuration);
+            services.AddUseCases();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

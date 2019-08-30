@@ -4,9 +4,14 @@ namespace Core.Domain.Entities
 {
     public class SimpleEntity : IEntity
     {
-        public Guid Id { get; }
+        public Guid Id { get; set; }
 
-        public string Title { get; }
+        public string Title { get; set; }
+
+        public SimpleEntity()
+        {
+
+        }
 
         public SimpleEntity(Guid id, string title)
         {
