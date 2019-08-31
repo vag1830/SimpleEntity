@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{343DCA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{AC570871-C4E6-4D78-AACA-5D81FEC30FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastucture", "Infrastucture\Infrastucture.csproj", "{CE98E9B8-4701-4DCF-90F4-8F8BC4015878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{CE98E9B8-4701-4DCF-90F4-8F8BC4015878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

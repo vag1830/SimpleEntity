@@ -2,6 +2,7 @@
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Application.Persistence;
 using Core.Application.UseCases;
+using Infrastructure.DatabaseSeeds;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,11 +29,16 @@ namespace WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
 
-            services.AddInMemoryPersistence(Configuration);
+            services.AddSqlLitePersistence(Configuration);
+            services.AddDatabaseUserSeed();
+            services.AddIdentityAndAuthentication();
             services.AddUseCases();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IHostingEnvironment env,
+            SimpleEntityUserSeeder userSeeder)
         {
             if (env.IsDevelopment())
             {
@@ -44,6 +50,9 @@ namespace WebApi
                 // app.UseHsts();
             }
 
+            userSeeder.Seed();
+
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

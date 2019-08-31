@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.GetAll;
+﻿using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Domain.Entities;
 using WebApi.UseCases.GetById;
 
-namespace WebApi.UseCases.GetAll
+namespace UnitTests.UseCases.GetById
 {
     public class FakeGetByIdOutputHandler : IGetByIdOutputHandler
     {
@@ -15,11 +12,11 @@ namespace WebApi.UseCases.GetAll
 
         public Task Handle(SimpleEntity output)
         {
-            ViewModel =  new SimpleEntityDto
-                {
-                    Id = output.Id,
-                    Title = output.Title
-                };
+            ViewModel = new SimpleEntityDto
+            {
+                Id = output.Id,
+                Title = output.Title
+            };
 
             return Task.CompletedTask;
         }

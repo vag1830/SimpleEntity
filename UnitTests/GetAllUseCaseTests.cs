@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Core.Application.UseCases;
 using FluentAssertions;
-using Infrastucture;
-using WebApi.UseCases.GetAll;
+using UnitTests.Persistense;
+using UnitTests.UseCases.GetAll;
 using Xunit;
 
 namespace UnitTests

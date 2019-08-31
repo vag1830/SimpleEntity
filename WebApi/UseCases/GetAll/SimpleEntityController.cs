@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Application.Boundaries.UseCases.GetById;
 using Core.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi;
 using WebApi.UseCases.GetAll;
@@ -10,6 +11,7 @@ using WebApi.UseCases.GetById;
 
 namespace WebApi.UseCases.GetAll
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SimpleEntitiesController : ControllerBase

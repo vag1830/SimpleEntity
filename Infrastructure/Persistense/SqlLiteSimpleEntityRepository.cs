@@ -5,7 +5,7 @@ using Core.Application.Persistence;
 using Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastucture
+namespace Infrastructure.Persistense
 {
     public class SqlLiteSimpleEntityRepository : ISimpleEntityRepository
     {

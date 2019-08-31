@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Domain.Entities;
-using WebApi.UseCases.GetById;
+using WebApi.UseCases.GetAll;
 
-namespace WebApi.UseCases.GetAll
+namespace UnitTests.UseCases.GetAll
 {
     public class FakeGetAllOutputHandler : IGetAllOutputHandler
     {
@@ -13,7 +13,7 @@ namespace WebApi.UseCases.GetAll
 
         public Task Handle(IList<SimpleEntity> output)
         {
-            ViewModel =  output
+            ViewModel = output
                 .Select(item => new SimpleEntityDto
                 {
                     Id = item.Id,

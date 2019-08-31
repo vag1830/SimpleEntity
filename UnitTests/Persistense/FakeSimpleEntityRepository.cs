@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Core.Application.Persistence;
 using Core.Domain.Entities;
 
-namespace Infrastucture
+namespace UnitTests.Persistense
 {
     public class FakeSimpleEntityRepository : ISimpleEntityRepository
     {

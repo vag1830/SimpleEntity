@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Core.Application.Boundaries.UseCases.Authenticate;
 using Core.Application.Boundaries.UseCases.GetAll;
 using Core.Application.Persistence;
 

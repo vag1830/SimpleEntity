@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Core.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastucture
+namespace Infrastructure.Persistense
 {
-    public class SimpleEntityContext : DbContext
+    public class SimpleEntityContext : IdentityDbContext<SimpleEntityUser>
     {
         public DbSet<SimpleEntity> SimpleEntities { get; set; }
 
@@ -17,6 +18,8 @@ namespace Infrastucture
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
+
             builder.Entity<SimpleEntity>()
                 .HasData(Data);
         }
