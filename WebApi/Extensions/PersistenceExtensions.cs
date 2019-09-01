@@ -47,46 +47,5 @@ namespace WebApi.Extensions
 
             return services;
         }
-
-        public static IServiceCollection AddIdentityAndAuthentication(this IServiceCollection services)
-        {
-            services.AddIdentity<SimpleEntityUser, IdentityRole>()
-                .AddEntityFrameworkStores<SimpleEntityContext>()
-                .AddDefaultTokenProviders();
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.SaveToken = true;
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidAudience = "https://simpleEntity.com",
-                    ValidIssuer = "https://simpleEntity.com",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("asafekeyfromconfiguration"))
-                };
-            });
-
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.Events.OnRedirectToLogin = context =>
-                {
-                    if (context.Request.Path.StartsWithSegments("/api"))
-                    {
-                        context.Response.StatusCode = 401;
-                    }
-
-                    return Task.CompletedTask;
-                };
-            });
-
-            return services;
-        }
     }
 }

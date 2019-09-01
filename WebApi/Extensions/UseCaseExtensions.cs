@@ -6,12 +6,14 @@ using Application.Boundaries.Services;
 using Application.Boundaries.UseCases.Authenticate;
 using Application.Boundaries.UseCases.GetAll;
 using Application.Boundaries.UseCases.GetById;
+using Application.Boundaries.UseCases.Register;
 using Application.UseCases;
 using Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.UseCases.Authenticate;
 using WebApi.UseCases.GetAll;
 using WebApi.UseCases.GetById;
+using WebApi.UseCases.Register;
 
 namespace WebApi.Extensions
 {
@@ -31,7 +33,9 @@ namespace WebApi.Extensions
             services.AddScoped<IAuthenticateOutputHandler, AuthenticateOutputHandler>(provider => provider.GetRequiredService<AuthenticateOutputHandler>());
             services.AddScoped<IAuthenticateUseCase, AuthenticateUseCase>();
 
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<RegisterOutputHandler, RegisterOutputHandler>();
+            services.AddScoped<IRegisterOutputHandler, RegisterOutputHandler>(provider => provider.GetRequiredService<RegisterOutputHandler>());
+            services.AddScoped<IRegisterUseCase, RegisterUseCase>();
 
             return services;
         }

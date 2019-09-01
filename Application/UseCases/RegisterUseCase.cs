@@ -30,7 +30,7 @@ namespace Application.UseCases
             {
                 Email = input.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = "username"
+                UserName = input.UserName
             };
 
             try

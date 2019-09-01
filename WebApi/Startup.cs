@@ -29,6 +29,7 @@ namespace WebApi
             services.AddDatabaseUserSeed();
             services.AddIdentityAndAuthentication();
             services.AddUseCases();
+            services.AddServices();
         }
 
         public void Configure(
