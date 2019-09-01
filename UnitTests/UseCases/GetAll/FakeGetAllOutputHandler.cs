@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.GetAll;
-using Core.Domain.Entities;
+using Application.Boundaries.UseCases.GetAll;
+using Domain.Entities;
 using WebApi.UseCases.GetAll;
 
 namespace UnitTests.UseCases.GetAll

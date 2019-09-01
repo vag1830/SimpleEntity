@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.GetById;
-using Core.Domain.Entities;
+using Application.Boundaries.UseCases.GetById;
+using Domain.Entities;
 using WebApi.UseCases.GetById;
 
 namespace UnitTests.UseCases.GetById

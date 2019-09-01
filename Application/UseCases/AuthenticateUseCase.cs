@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.Authenticate;
-using Core.Application.Services;
+using Application.Boundaries.UseCases.Authenticate;
+using Application.Services;
 
-namespace Core.Application.UseCases
+namespace Application.UseCases
 {
     public class AuthenticateUseCase : IAuthenticateUseCase
     {
@@ -21,7 +21,7 @@ namespace Core.Application.UseCases
 
             if (user != null && await _userService.CheckPassword(user, input.Password))
             {
-                await _outputHandler.Handle(user); 
+                await _outputHandler.Handle(user);
             }
             else
             {

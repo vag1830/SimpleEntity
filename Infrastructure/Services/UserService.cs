@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Core.Application.Services;
-using Core.Domain.Entities;
+using Application.Services;
+using Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure.Services

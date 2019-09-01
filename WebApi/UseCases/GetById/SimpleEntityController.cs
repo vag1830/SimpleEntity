@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.GetAll;
-using Core.Application.Boundaries.UseCases.GetById;
+using Application.Boundaries.UseCases.GetById;
 using Microsoft.AspNetCore.Mvc;
 using WebApi;
 using WebApi.UseCases.GetAll;

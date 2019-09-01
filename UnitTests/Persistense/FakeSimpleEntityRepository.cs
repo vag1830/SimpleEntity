@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core.Application.Persistence;
-using Core.Domain.Entities;
+using Application.Persistence;
+using Domain.Entities;
 
 namespace UnitTests.Persistense
 {

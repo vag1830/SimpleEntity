@@ -1,8 +1,4 @@
-﻿using Core.Application.Boundaries.UseCases.GetAll;
-using Core.Application.Boundaries.UseCases.GetById;
-using Core.Application.Persistence;
-using Core.Application.UseCases;
-using Infrastructure.DatabaseSeeds;
+﻿using Infrastructure.DatabaseSeeds;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

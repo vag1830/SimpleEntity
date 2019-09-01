@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.GetAll;
-using Core.Application.Boundaries.UseCases.GetById;
-using Core.Domain.Entities;
+using Application.Boundaries.UseCases.GetById;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using WebApi;
 using WebApi.UseCases;

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.Authenticate;
-using Core.Application.Boundaries.UseCases.GetAll;
-using Core.Application.Boundaries.UseCases.GetById;
-using Core.Application.Services;
-using Core.Application.UseCases;
+using Application.Boundaries.UseCases.Authenticate;
+using Application.Boundaries.UseCases.GetAll;
+using Application.Boundaries.UseCases.GetById;
+using Application.Services;
+using Application.UseCases;
 using Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.UseCases.Authenticate;

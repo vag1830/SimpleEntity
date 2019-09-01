@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.Authenticate;
-using Core.Application.UseCases;
+using Application.Boundaries.UseCases.Authenticate;
+using Application.UseCases;
 using FluentAssertions;
 using UnitTests.Services;
 using UnitTests.UseCases.Authenticate;
-using WebApi.UseCases.Authenticate;
 using Xunit;
 
 namespace UnitTests

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.GetById;
-using Core.Application.Persistence;
+using Application.Boundaries.UseCases.GetById;
+using Application.Persistence;
 
-namespace Core.Application.UseCases
+namespace Application.UseCases
 {
     public class GetByIdUseCase : IGetByIdUseCase
     {
@@ -24,7 +24,7 @@ namespace Core.Application.UseCases
             {
                 await _outputHandler.Error($"There is no item with id: {id.ToString()}");
             }
-            else 
+            else
             {
                 await _outputHandler.Handle(output);
             }

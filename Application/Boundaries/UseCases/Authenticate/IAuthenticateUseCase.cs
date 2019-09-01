@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Application.Boundaries.UseCases.Authenticate;
 
-namespace Core.Application.Boundaries.UseCases.Authenticate
+namespace Application.Boundaries.UseCases.Authenticate
 {
     public interface IAuthenticateUseCase
     {

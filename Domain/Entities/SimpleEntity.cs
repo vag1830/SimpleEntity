@@ -1,6 +1,7 @@
 ﻿using System;
+using Core.Domain.Entities;
 
-namespace Core.Domain.Entities
+namespace Domain.Entities
 {
     public class SimpleEntity : IEntity
     {

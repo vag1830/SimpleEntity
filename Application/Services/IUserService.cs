@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Core.Domain.Entities;
+using Domain.Entities;
 
-namespace Core.Application.Services
+namespace Application.Services
 {
     public interface IUserService
     {

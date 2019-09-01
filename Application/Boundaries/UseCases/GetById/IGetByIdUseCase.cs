@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Core.Application.Boundaries.UseCases.GetById
+namespace Application.Boundaries.UseCases.GetById
 {
     public interface IGetByIdUseCase
     {

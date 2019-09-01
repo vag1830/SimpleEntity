@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.Authenticate;
-using Core.Application.Boundaries.UseCases.GetAll;
-using Core.Application.Persistence;
+using Application.Boundaries.UseCases.GetAll;
+using Application.Persistence;
 
-namespace Core.Application.UseCases
+namespace Application.UseCases
 {
     public class GetAllUseCase : IGetAllUseCase
     {

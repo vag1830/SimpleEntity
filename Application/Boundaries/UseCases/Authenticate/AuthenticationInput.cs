@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Application.Boundaries.UseCases.Authenticate
+namespace Application.Boundaries.UseCases.Authenticate
 {
     public class AuthenticationInput
     {

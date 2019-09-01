@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Core.Domain.Entities;
+using Domain.Entities;
 
-namespace Core.Application.Boundaries.UseCases.Authenticate
+namespace Application.Boundaries.UseCases.Authenticate
 {
     public interface IAuthenticateOutputHandler
     {

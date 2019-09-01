@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Core.Application.Boundaries.UseCases.GetAll
+namespace Application.Boundaries.UseCases.GetAll
 {
     public interface IGetAllUseCase
     {

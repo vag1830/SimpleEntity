@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Core.Application.UseCases;
+using Application.UseCases;
 using FluentAssertions;
 using UnitTests.Persistense;
 using UnitTests.UseCases.GetById;

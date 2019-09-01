@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Core.Application.Boundaries.UseCases.Authenticate;
-using Core.Domain.Entities;
+using Application.Boundaries.UseCases.Authenticate;
+using Domain.Entities;
 
 namespace UnitTests.UseCases.Authenticate
 {

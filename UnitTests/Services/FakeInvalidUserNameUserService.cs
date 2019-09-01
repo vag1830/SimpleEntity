@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Core.Application.Services;
-using Core.Domain.Entities;
+using Application.Services;
+using Domain.Entities;
 
 namespace UnitTests.Services
 {

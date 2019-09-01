@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Core.Domain.Entities;
+using Domain.Entities;
 using Infrastructure.Persistense;
 using Microsoft.AspNetCore.Identity;
 
