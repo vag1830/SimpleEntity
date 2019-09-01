@@ -15,6 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{CE98E9B8-4701-4DCF-90F4-8F8BC4015878}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{E2FCB870-D374-45B4-9236-467A1E896B1C}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +50,7 @@ Global
 		{36ED398C-DE89-4F22-B9CD-08CCD5980681} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
 		{4F7B56EB-330D-4506-9AB7-F48912244A60} = {2A42276E-1AC6-4144-8AC1-EA94E8EBD278}
 		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
+		{CE98E9B8-4701-4DCF-90F4-8F8BC4015878} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65CC9F54-5456-40A0-9F6E-3C935C9AEE3C}
