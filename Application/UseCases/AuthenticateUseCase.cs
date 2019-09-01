@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Application.Boundaries.Services;
 using Application.Boundaries.UseCases.Authenticate;
-using Application.Services;
 
 namespace Application.UseCases
 {

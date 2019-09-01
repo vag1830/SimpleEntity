@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain.Entities;
 
-namespace Application.Persistence
+namespace Application.Boundaries.Persistence
 {
     public interface ISimpleEntityRepository
     {

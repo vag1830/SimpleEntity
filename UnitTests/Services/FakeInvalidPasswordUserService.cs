@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Application.Services;
+using Application.Boundaries.Services;
 using Domain.Entities;
 
 namespace UnitTests.Services
@@ -16,6 +16,11 @@ namespace UnitTests.Services
         public async Task<bool> CheckPassword(SimpleEntityUser user, string password)
         {
             return await Task.FromResult(false);
+        }
+
+        public Task<SimpleEntityUser> Create(SimpleEntityUser user, string password)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

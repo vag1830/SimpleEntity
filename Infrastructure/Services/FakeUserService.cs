@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Application.Services;
+using Application.Boundaries.Services;
 using Domain.Entities;
 
-namespace UnitTests.Services
+namespace Infrastructure.Services
 {
     public class FakeUserService : IUserService
     {
@@ -16,6 +16,13 @@ namespace UnitTests.Services
         public async Task<bool> CheckPassword(SimpleEntityUser user, string password)
         {
             return await Task.FromResult(true);
+        }
+
+        public async Task<SimpleEntityUser> Create(SimpleEntityUser user, string password)
+        {
+            User = user;
+
+            return await Task.FromResult(User);
         }
     }
 }

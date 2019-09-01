@@ -6,7 +6,7 @@ using UnitTests.Persistense;
 using UnitTests.UseCases.GetById;
 using Xunit;
 
-namespace UnitTests
+namespace UnitTests.UseCases
 {
     public class GetByIdUseCaseTests
     {

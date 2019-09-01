@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Application.Persistence;
+using Application.Boundaries.Persistence;
 using Domain.Entities;
 using Infrastructure;
 using Infrastructure.DatabaseSeeds;

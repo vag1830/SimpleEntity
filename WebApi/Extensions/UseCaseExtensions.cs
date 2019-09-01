@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Boundaries.Services;
 using Application.Boundaries.UseCases.Authenticate;
 using Application.Boundaries.UseCases.GetAll;
 using Application.Boundaries.UseCases.GetById;
-using Application.Services;
 using Application.UseCases;
 using Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;

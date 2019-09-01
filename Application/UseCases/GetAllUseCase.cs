@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Application.Boundaries.Persistence;
 using Application.Boundaries.UseCases.GetAll;
-using Application.Persistence;
 
 namespace Application.UseCases
 {

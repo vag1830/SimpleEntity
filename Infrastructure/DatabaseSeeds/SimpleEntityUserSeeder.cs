@@ -11,7 +11,7 @@ namespace Infrastructure.DatabaseSeeds
         private readonly SimpleEntityContext _context;
         private readonly UserManager<SimpleEntityUser> _userManager;
 
-        public SimpleEntityUserSeeder(SimpleEntityContext context, UserManager<SimpleEntityUser> userManager, IServiceProvider serviceProvider)
+        public SimpleEntityUserSeeder(SimpleEntityContext context, UserManager<SimpleEntityUser> userManager)
         {
             _context = context;
             _userManager = userManager;

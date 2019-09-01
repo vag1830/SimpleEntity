@@ -5,7 +5,7 @@ using UnitTests.Persistense;
 using UnitTests.UseCases.GetAll;
 using Xunit;
 
-namespace UnitTests
+namespace UnitTests.UseCases
 {
     public class GetAllUseCaseTests
     {
@@ -37,7 +37,7 @@ namespace UnitTests
             var sut = new GetAllUseCase(presenter, repository);
 
             // Act
-            
+
             await sut.Execute();
 
             // Assert

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Application.Boundaries.Persistence;
 using Application.Boundaries.UseCases.GetById;
-using Application.Persistence;
 
 namespace Application.UseCases
 {

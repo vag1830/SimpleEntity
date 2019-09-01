@@ -2,16 +2,17 @@
 using Application.Boundaries.UseCases.Authenticate;
 using Application.UseCases;
 using FluentAssertions;
+using Infrastructure.Services;
 using UnitTests.Services;
 using UnitTests.UseCases.Authenticate;
 using Xunit;
 
-namespace UnitTests
+namespace UnitTests.UseCases
 {
     public class AuthenticateUseCaseTests
     {
         [Fact]
-        public async Task AuthenticateUseCase_InvalidUserName_ShouldReturnError() 
+        public async Task AuthenticateUseCase_InvalidUserName_ShouldReturnError()
         {
             // Arrange
             var userService = new FakeInvalidUserNameUserService();
