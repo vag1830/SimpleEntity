@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Application.Boundaries.Persistence;
 using Domain.Entities;
@@ -19,16 +20,25 @@ namespace Infrastructure.Persistense
 
         public async Task<IList<SimpleEntity>> GetAll()
         {
-            var crap = await _context.SimpleEntities
+            var items = await _context.SimpleEntities
                 .ToListAsync();
 
-            return crap;
+            return items
+                .Select(CreateSimpleEntity)
+                .ToList();
         }
 
         public async Task<SimpleEntity> GetById(Guid id)
         {
-            return await _context.SimpleEntities
+            var item = await _context.SimpleEntities
                 .FirstOrDefaultAsync(simpleEntity => simpleEntity.Id == id);
+
+            return CreateSimpleEntity(item);
+        }
+
+        private SimpleEntity CreateSimpleEntity(SimpleEntityDao dao)
+        {
+            return new SimpleEntity(dao.Id, dao.Title);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Infrastructure.Persistense
 {
     public class SimpleEntityContext : IdentityDbContext<SimpleEntityUser>
     {
-        public DbSet<SimpleEntity> SimpleEntities { get; set; }
+        public DbSet<SimpleEntityDao> SimpleEntities { get; set; }
 
         public SimpleEntityContext(DbContextOptions<SimpleEntityContext> options)
             : base(options)
@@ -20,15 +20,15 @@ namespace Infrastructure.Persistense
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<SimpleEntity>()
+            builder.Entity<SimpleEntityDao>()
                 .HasData(Data);
         }
 
-        private readonly IList<SimpleEntity> Data = new List<SimpleEntity>
+        private readonly IList<SimpleEntityDao> Data = new List<SimpleEntityDao>
         {
-            new SimpleEntity(Guid.NewGuid(), "one"),
-            new SimpleEntity(Guid.NewGuid(), "two"),
-            new SimpleEntity(Guid.NewGuid(), "three")
+            new SimpleEntityDao(Guid.NewGuid(), "one"),
+            new SimpleEntityDao(Guid.NewGuid(), "two"),
+            new SimpleEntityDao(Guid.NewGuid(), "three")
         };
     }
 }
