@@ -11,10 +11,13 @@ namespace Infrastructure.Persistense
     public class SqlLiteSimpleEntityRepository : ISimpleEntityRepository
     {
         private readonly SimpleEntityContext _context;
+        private readonly IEntityFactory _entityFactory;
 
-        public SqlLiteSimpleEntityRepository(SimpleEntityContext context)
+        public SqlLiteSimpleEntityRepository(SimpleEntityContext context, IEntityFactory entityFactory)
         {
             _context = context;
+            _entityFactory = entityFactory;
+
             _context.Database.EnsureCreated();
         }
 
@@ -24,7 +27,7 @@ namespace Infrastructure.Persistense
                 .ToListAsync();
 
             return items
-                .Select(CreateSimpleEntity)
+                .Select(item => _entityFactory.NewSimpleEntity(item.Id, item.Title))
                 .ToList();
         }
 
@@ -33,12 +36,7 @@ namespace Infrastructure.Persistense
             var item = await _context.SimpleEntities
                 .FirstOrDefaultAsync(simpleEntity => simpleEntity.Id == id);
 
-            return CreateSimpleEntity(item);
-        }
-
-        private SimpleEntity CreateSimpleEntity(SimpleEntityDao dao)
-        {
-            return new SimpleEntity(dao.Id, dao.Title);
+            return _entityFactory.NewSimpleEntity(item.Id, item.Title);
         }
     }
 }

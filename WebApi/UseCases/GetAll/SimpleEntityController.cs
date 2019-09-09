@@ -9,7 +9,7 @@ using WebApi.UseCases.GetById;
 
 namespace WebApi.UseCases.GetAll
 {
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SimpleEntitiesController : ControllerBase

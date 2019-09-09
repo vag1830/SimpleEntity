@@ -8,6 +8,7 @@ using Application.Boundaries.UseCases.GetAll;
 using Application.Boundaries.UseCases.GetById;
 using Application.Boundaries.UseCases.Register;
 using Application.UseCases;
+using Domain.Entities;
 using Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using WebApi.Services;
@@ -22,6 +23,8 @@ namespace WebApi.Extensions
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddSingleton<IEntityFactory, DefaultEntityFactory>();
+
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<TokenService, TokenService>();
 
