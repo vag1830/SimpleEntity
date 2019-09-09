@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Application.Boundaries.UseCases.GetAll;
 using Domain.Entities;
 using WebApi.UseCases.GetAll;
@@ -11,7 +10,7 @@ namespace UnitTests.UseCases.GetAll
     {
         public IList<SimpleEntityDto> ViewModel { get; private set; }
 
-        public Task Handle(IList<SimpleEntity> output)
+        public void Handle(IList<SimpleEntity> output)
         {
             ViewModel = output
                 .Select(item => new SimpleEntityDto
@@ -20,11 +19,9 @@ namespace UnitTests.UseCases.GetAll
                     Title = item.Title
                 })
                 .ToList();
-
-            return Task.CompletedTask;
         }
 
-        public Task Error(string message)
+        public void Error(string message)
         {
             throw new System.NotImplementedException();
         }

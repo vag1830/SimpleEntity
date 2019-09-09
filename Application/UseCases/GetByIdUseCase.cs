@@ -22,11 +22,11 @@ namespace Application.UseCases
 
             if (output == null)
             {
-                await _outputHandler.Error($"There is no item with id: {id.ToString()}");
+                _outputHandler.Error($"There is no item with id: {id.ToString()}");
             }
             else
             {
-                await _outputHandler.Handle(output);
+                _outputHandler.Handle(output);
             }
         }
     }

@@ -15,7 +15,7 @@ namespace WebApi.UseCases.GetById
     {
         public IActionResult ViewModel { get; private set; }
 
-        public Task Handle(SimpleEntity output)
+        public void Handle(SimpleEntity output)
         {
             var result = new SimpleEntityDto
             {
@@ -24,15 +24,11 @@ namespace WebApi.UseCases.GetById
             };
 
             ViewModel = new ObjectResult(result);
-
-            return Task.CompletedTask;
         }
 
-        public Task Error(string message)
+        public void Error(string message)
         {
             ViewModel = new NotFoundObjectResult(message);
-
-            return Task.CompletedTask;
         }
     }
 }

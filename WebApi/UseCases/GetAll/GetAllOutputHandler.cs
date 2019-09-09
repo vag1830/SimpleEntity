@@ -12,7 +12,7 @@ namespace WebApi.UseCases.GetAll
     {
         public IActionResult ViewModel { get; private set; }
 
-        public Task Handle(IList<SimpleEntity> output)
+        public void Handle(IList<SimpleEntity> output)
         {
             var result = output
                 .Select(item => new SimpleEntityDto
@@ -23,11 +23,9 @@ namespace WebApi.UseCases.GetAll
                 .ToList();
 
             ViewModel = new ObjectResult(result);
-
-            return Task.CompletedTask;
         }
 
-        public Task Error(string message)
+        public void Error(string message)
         {
             throw new System.NotImplementedException();
         }

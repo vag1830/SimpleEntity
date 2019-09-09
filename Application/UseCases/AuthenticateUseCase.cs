@@ -21,11 +21,11 @@ namespace Application.UseCases
 
             if (user != null && await _userService.CheckPassword(user, input.Password))
             {
-                await _outputHandler.Handle(user);
+                _outputHandler.Handle(user);
             }
             else
             {
-                await _outputHandler.Error("Not Authenticated");
+                _outputHandler.Error("Not Authenticated");
             }
         }
     }

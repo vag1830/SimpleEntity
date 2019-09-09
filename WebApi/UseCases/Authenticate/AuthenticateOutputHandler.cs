@@ -23,7 +23,7 @@ namespace WebApi.UseCases.Authenticate
             _tokenService = tokenService;
         }
 
-        public Task Handle(SimpleEntityUser output)
+        public void Handle(SimpleEntityUser output)
         {
             var token = _tokenService.CreateToken(output);
 
@@ -34,15 +34,11 @@ namespace WebApi.UseCases.Authenticate
             };
 
             ViewModel = new CreatedResult("https://simpleEntity.com", response);
-
-            return Task.CompletedTask;
         }
 
-        public Task Error(string message)
+        public void Error(string message)
         {
             ViewModel = new BadRequestObjectResult(message);
-
-            return Task.CompletedTask;
         }
     }
 }

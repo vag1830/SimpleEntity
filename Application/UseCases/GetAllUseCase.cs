@@ -19,7 +19,7 @@ namespace Application.UseCases
         {
             var output = await _repository.GetAll();
 
-            await _outputHandler.Handle(output);
+            _outputHandler.Handle(output);
         }
     }
 }

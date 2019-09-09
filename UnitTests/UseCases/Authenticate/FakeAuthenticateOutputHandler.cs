@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Application.Boundaries.UseCases.Authenticate;
+﻿using Application.Boundaries.UseCases.Authenticate;
 using Domain.Entities;
 
 namespace UnitTests.UseCases.Authenticate
@@ -10,18 +9,14 @@ namespace UnitTests.UseCases.Authenticate
 
         public string ErrorMessage { get; private set; }
 
-        public async Task Handle(SimpleEntityUser output)
+        public void Handle(SimpleEntityUser output)
         {
             ViewModel = output;
-
-            await Task.CompletedTask;
         }
 
-        public async Task Error(string message)
+        public void Error(string message)
         {
             ErrorMessage = message;
-
-            await Task.CompletedTask;
         }
     }
 }

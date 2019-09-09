@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
-using Domain.Entities;
+﻿using Domain.Entities;
 
 namespace Application.Boundaries.UseCases.Authenticate
 {
     public interface IAuthenticateOutputHandler
     {
-        Task Handle(SimpleEntityUser output);
+        void Handle(SimpleEntityUser output);
 
-        Task Error(string message);
+        void Error(string message);
     }
 }

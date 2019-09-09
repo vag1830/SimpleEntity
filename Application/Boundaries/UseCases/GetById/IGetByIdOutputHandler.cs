@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
-using Domain.Entities;
+﻿using Domain.Entities;
 
 namespace Application.Boundaries.UseCases.GetById
 {
     public interface IGetByIdOutputHandler
     {
-        Task Handle(SimpleEntity output);
+        void Handle(SimpleEntity output);
 
-        Task Error(string message);
+        void Error(string message);
     }
 }

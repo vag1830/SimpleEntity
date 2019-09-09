@@ -20,7 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{53F1BC6A-7519-425E-A2DF-14292C462886}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{53F1BC6A-7519-425E-A2DF-14292C462886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntergrationTests", "IntergrationTests\IntergrationTests.csproj", "{5E04234A-11A9-4E13-8606-12A557200D89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{53F1BC6A-7519-425E-A2DF-14292C462886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F1BC6A-7519-425E-A2DF-14292C462886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F1BC6A-7519-425E-A2DF-14292C462886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E04234A-11A9-4E13-8606-12A557200D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E04234A-11A9-4E13-8606-12A557200D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E04234A-11A9-4E13-8606-12A557200D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E04234A-11A9-4E13-8606-12A557200D89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{AC570871-C4E6-4D78-AACA-5D81FEC30FEE} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
 		{CE98E9B8-4701-4DCF-90F4-8F8BC4015878} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
 		{53F1BC6A-7519-425E-A2DF-14292C462886} = {343DCA97-1704-458C-91F3-BBFC873B74A0}
+		{5E04234A-11A9-4E13-8606-12A557200D89} = {2A42276E-1AC6-4144-8AC1-EA94E8EBD278}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65CC9F54-5456-40A0-9F6E-3C935C9AEE3C}
